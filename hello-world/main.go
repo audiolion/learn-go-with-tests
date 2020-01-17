@@ -2,9 +2,15 @@ package main
 
 import "fmt"
 
-const englishHelloPrefix = "Hello, "
+const (
+	englishHelloPrefix = "Hello, "
+ 	englishHelloSuffix = "World"
+)
 
 func Hello(str string) string {
+	if len(str) == 0 {
+		return englishHelloPrefix + englishHelloSuffix
+	}
 	return englishHelloPrefix + str
 }
 
