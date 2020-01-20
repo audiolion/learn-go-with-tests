@@ -20,3 +20,19 @@ func SumAll(nums ...[]int) []int {
 	}
 	return result
 }
+
+// SumAllTails computes the sum of the tail of each slice
+//  passed in as input, returning the result in a slice of
+// ints where the index corresponds to the positional ordering
+// of the int slice passed as input
+func SumAllTails(nums ...[]int) []int {
+	result := make([]int, len(nums))
+	for i, n := range nums {
+		if len(n) == 0 {
+			result[i] = 0
+		} else {
+			result[i] = Sum(n[1:])
+		}
+	}
+	return result
+}
